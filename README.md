@@ -13,7 +13,7 @@ Installation
 ------------
 
 ``` bash
-git clone git://github.com/michaeljsmalley/dotfiles ~/dotfiles
+git clone https://github.com/egens/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
