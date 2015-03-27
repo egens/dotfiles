@@ -157,3 +157,14 @@ alias get='git '
 alias cp='cp -i'
 
 alias ipynb='ipython notebook --pylab=inline'
+# added by Anaconda 2.1.0 installer
+export PATH="/home/egens/anaconda/bin:$PATH"
+
+# Nice compressing with progress bar.
+tar_with_progress() {
+    tar cf - $1 -P | pv -s $(du -sb $1 | awk '{print $1}') | gzip > $1.tar.gz
+}
+alias compress=tar_with_progress
+
+# Checks spelling of russian words in project textfiles.
+alias spellcheck='grep --recursive --only-matching --no-filename --ignore-case --binary-files=without-match --exclude-dir="tmp" "[а-я]*" * | aspell --list | sort| uniq'
